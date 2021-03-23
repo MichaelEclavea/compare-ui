@@ -5,7 +5,7 @@ const Controls = ({ controls, renderControls }) => {
 
   return (
     <div style={styles.container}>
-      <h4>Choose controls: </h4>
+      <h4></h4>
         <ToggleButton type='checkbox' variant='light' size="lg" onChange={() => renderControls('nav')} checked={controls.nav}> Nav</ToggleButton>
         <ToggleButton type='checkbox' variant='light' size="lg" onChange={() => renderControls('button')} checked={controls.button}> Button</ToggleButton>
         <ToggleButton type='checkbox' variant='light' size="lg" onChange={() => renderControls('checkbox')} checked={controls.checkbox}> Checkbox</ToggleButton>
