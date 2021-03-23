@@ -1,6 +1,8 @@
-import MaterialPage from "./pages/MaterialPage"
+import MaterialPage from './pages/MaterialPage'
 import FluentUiPage from './pages/FluentPage'
+import BootstrapPage from './pages/BootstrapPage'
 import Options from './components/options/Options'
+import ColorOptions from './components/options/ColorOptions'
 import Controls from './components/control-choices/Controls'
 import './App.css';
 import { useState } from "react";
@@ -8,6 +10,8 @@ import { useState } from "react";
 function App() {
   const [showMaterial, setShowMaterial] = useState(false)
   const [showFluent, setShowFluent] = useState(false)
+  const [showBootstrap, setShowBootstrap] = useState(false)
+  const [bootstrapColor, setBootstrapColor] = useState('primary')
   const [controls, setControls] = useState({
     nav: false,
     button: false,
@@ -35,19 +39,31 @@ function App() {
     setShowFluent(!showFluent)
   }
 
+  const renderBootstrap = () => {
+    setShowBootstrap(!showBootstrap)
+  }
+
+  const renderColorBootstrap = (string) => {
+    setBootstrapColor(string);
+  }
+
   return (
     <div style={{height: '100vh'}}>
       <h1 style={{textAlign: 'center'}}>Compare different UI</h1>
       <hr></hr>
-      <Options renderFluent={renderFluent} renderMaterial={renderMaterial}/>
+      <Options renderFluent={renderFluent} renderMaterial={renderMaterial} renderBootstrap={renderBootstrap}/>
       <hr></hr>
       <Controls controls={controls} renderControls={renderControls}/>
+      {/* <ColorOptions style={styles.options} renderColorBootstrap={renderColorBootstrap}/> */}
       <div className='main-container' style={{width: '85vw', maxWidth: '1400px', padding: '20px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 500px)', margin: 'auto', justifyContent: 'space-around', gap: '20px'}}>
-        <div className='material-container' style={styles.material}>
+        <div style={styles.material}>
         {!showMaterial ? '' : <MaterialPage controls={controls}/>}
         </div>
-        <div className='fluent-container' style={styles.material}>
+        <div style={styles.material}>
         {!showFluent ? '' : <FluentUiPage controls={controls}/>}
+        </div>
+        <div style={styles.material}>
+        {!showBootstrap ? '' : <BootstrapPage controls={controls} bootstrapColor={bootstrapColor} renderColorBootstrap={renderColorBootstrap}/>}
         </div>
       </div>
     </div>
@@ -57,6 +73,10 @@ function App() {
 const styles = {
   material: {
     marginBottom: '50px',
+  },
+  options: {
+    position: 'absolute',
+    left: '0',
   }
 }
 
