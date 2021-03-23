@@ -17,7 +17,7 @@ const MaterialPage = ({ controls }) => {
           height: '100%'
         }}
       >
-        <section >
+        <section style={styles.section}>
 
        {!nav ? '' : <ScrollableTabsButtonAuto/>}
 
@@ -29,14 +29,12 @@ const MaterialPage = ({ controls }) => {
 
         {!checkbox ? '' : (
           <>
-          <p>Checkbox: </p>
           <MaterialCheckbox/>
           </>
         )}
 
         {!switchButton ? '' : (
           <>
-          <p>Switch: </p>
           <MaterialSwitch/>
           </>
         )}

@@ -36,22 +36,28 @@ function App() {
   }
 
   return (
-    <div>
+    <div style={{height: '100vh'}}>
       <h1 style={{textAlign: 'center'}}>Compare different UI</h1>
       <hr></hr>
       <Options renderFluent={renderFluent} renderMaterial={renderMaterial}/>
       <hr></hr>
       <Controls controls={controls} renderControls={renderControls}/>
-      <div className='main-container' style={{width: '85vw', maxWidth: '1400px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 500px)', margin: 'auto', justifyContent: 'space-around', padding: '20px', gap: '20px'}}>
-        <div className='material-container' style={{marginTop: '20px'}}>
+      <div className='main-container' style={{width: '85vw', maxWidth: '1400px', padding: '20px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 500px)', margin: 'auto', justifyContent: 'space-around', gap: '20px'}}>
+        <div className='material-container' style={styles.material}>
         {!showMaterial ? '' : <MaterialPage controls={controls}/>}
         </div>
-        <div className='fluent-container' style={{marginTop: '20px'}}>
+        <div className='fluent-container' style={styles.material}>
         {!showFluent ? '' : <FluentUiPage controls={controls}/>}
         </div>
       </div>
     </div>
   );
+}
+
+const styles = {
+  material: {
+    marginBottom: '50px',
+  }
 }
 
 export default App;
