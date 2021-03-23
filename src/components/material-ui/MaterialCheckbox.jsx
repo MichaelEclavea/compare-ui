@@ -9,7 +9,7 @@ const MaterialCheckbox = () => {
         color="primary"
         inputProps={{ 'aria-label': 'secondary checkbox' }}
       />
-      <label style={styles.label}>Toggle Switch</label>
+      <label style={styles.label}>Checkbox</label>
       </div>
     )
 }

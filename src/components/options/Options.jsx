@@ -2,13 +2,14 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 
 
-const Options = ({ renderMaterial, renderFluent }) => {
+const Options = ({ renderMaterial, renderFluent, renderBootstrap }) => {
 
     return(
         <div style={styles.container}>
         <h4>Choose your UI: </h4>
         <Button onClick={() => renderMaterial()}>Material</Button>
         <Button onClick={() => renderFluent()}>Fluent</Button>
+        <Button onClick={() => renderBootstrap()}>Bootstrap</Button>
         </div>
     )
 }
