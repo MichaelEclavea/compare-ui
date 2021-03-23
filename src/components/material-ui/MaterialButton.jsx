@@ -6,44 +6,30 @@ function MaterialButton() {
   return (
     <>
     <div style={styles.buttonContainer}>
-    <section style={styles.sections}>
-      <Button color="primary" variant="contained" style={{display: 'block'}}>Button</Button>
-      <label>Contained</label>
-    </section>
-    <section style={styles.sections}>
-      <Button color="primary" variant="outlined">Button</Button>
-      <label>Outlined</label>
-      </section>
-      <section style={styles.sections}>
-      <Button color="primary">Button</Button>
-      <label>Text</label>
-      </section>
-      <section style={styles.sections}>
+
+      <Button color="primary" variant="contained" style={{display: 'block'}}>Contained</Button>
+
+      <Button color="primary" variant="outlined">Outlined</Button>
+
+      <Button color="primary">Text</Button>
+
       <Button
         variant="contained"
         color="primary"
         startIcon={<DeleteIcon />}
       >
-        Delete
+        Icon
       </Button>
-      <label>Icon Button</label>
-      </section>
+
     </div>
     </>
   )
 }
 
-const styles={
+const styles = {
   buttonContainer: {
     display: 'flex',
     justifyContent: 'space-around'
-  },
-  sections: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    textAlign: 'center',
-    gap: '3px'
   }
 }
 

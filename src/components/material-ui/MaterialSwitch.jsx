@@ -16,18 +16,33 @@ const MaterialSwitch = () => {
     }
   }
   return (
+    <div style={styles.container}>
+    <label style={styles.label}>Toggle Switch</label>
     <FormControlLabel
     control={
       <Switch
         checked={isChecked}
         onChange={renderSwitch}
-        name="checkedB"
+        name="toggle"
         color="primary"
       />
     }
     label={text}
   />
+  </div>
   )
+}
+
+const styles = {
+  container: {
+    fontWeight: '600',
+    fontSize: '14px',
+  },
+  label: {
+    margin: '0',
+    padding: '5px 0',
+    display: 'block'
+  }
 }
 
 export default MaterialSwitch
